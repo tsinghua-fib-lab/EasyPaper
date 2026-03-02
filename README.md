@@ -17,7 +17,7 @@ Multi-agent academic paper generation service: turns metadata (title, idea, meth
 
 ---
 
-## Deployment (platform / self-hosted)
+## Deployment
 
 ### 1. Install
 
@@ -32,7 +32,6 @@ pip install -e .
 
 - Copy `configs/example.yaml` to a **private** config file (e.g. `configs/my_config.yaml`).
 - Replace every `your_llm_api_key` / `your_vlm_api_key` with your real API keys.
-- **Do not commit** the file with real keys. Add it to `.gitignore` if needed.
 
 Alternatively, if you use [AgentSociety2](https://github.com/tsinghua-fib-lab/agentsociety): configure EasyPaper LLM/VLM in its config page; it will generate `easypaper_agentsociety.yaml` in the workspace. Point `AGENT_CONFIG_PATH` to that file when starting EasyPaper.
 
@@ -115,10 +114,3 @@ When used with [AgentSociety2](https://github.com/tsinghua-fib-lab/agentsociety)
 - `scripts/` — CLI and tests
 - `economist_example/` — Sample metadata and figures
 - `results/` — Generated outputs (created at runtime)
-
----
-
-## Security
-
-- **Never commit** API keys or config files containing real keys.
-- Keep `AGENT_CONFIG_PATH` pointing to a config file that is not in version control, or use environment variables for secrets where supported.
